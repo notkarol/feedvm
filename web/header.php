@@ -1,4 +1,4 @@
-<?php include("tools.php") ?>
+<?php require_once("tools.php"); ?>
 
 <!doctype html>
 
