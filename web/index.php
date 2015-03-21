@@ -37,52 +37,10 @@
       </ul>
     </section>
     <section class="col-3">
-      <a href="index.php?title=hi&time">★</a>
+      <a href="#">★</a>
         <span class="count">27</span>
     </section>
   </article>
-
-<!--   <article class="event">
-    <img src="img/food_icons/apple.png" alt="food" />
-  		<h2>ALANA Free Breakfast</h2>
-  		<ul>
-  			<li>ALANA Free Breakfast</li>
-  			<li>Eggs and ham</li>
-  			<li>Tuesday, Nov 1 • ALANA Center</li>
-  		</ul>
-  		<section class="col-3">
-      <a href="index.php?title=hi&time">★</a>
-        <span class="count">7</span>
-    </section>
-  </article>
-
-  <article class="event">
-  	<img src="img/food_icons/apple.png" alt="food" />
-  		<h2>Salsa Dancing</h2>
-  		<ul>
-  			<li>Come dance with UVM's Sass Team!</li>
-  			<li>Chips and salsa</li>
-  			<li>Tuesday, Nov 1 • Patrick Gym</li>
-  		</ul>
-  		<section class="col-3">
-      <a href="index.php?title=hi&time">★</a>
-        <span class="count">7</span>
-    </section>
-  </article>
-
-    <article class="event">
-  	<img src="img/food_icons/apple.png" alt="food" />
-  		<h2>Salsa Dancing</h2>
-  		<ul>
-  			<li>Come dance with UVM's Sass Team!</li>
-  			<li>Chips and salsa</li>
-  			<li>Tuesday, Nov 1 • Patrick Gym</li>
-  		</ul>
-  		<section class="col-3">
-      <a href="index.php?title=hi&time">★</a>
-        <span class="count">7</span>
-    </section>
-  </article> -->
 
 <?php include("footer.php") ?>
 </body>

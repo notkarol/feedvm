@@ -10,7 +10,7 @@
  <meta name="description" content="UFeedMe: connecting students at UVM through events hosting free food">
  <meta name="author" content="UFeedMe">
 
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, intial-scale=1">
 
 <!-- Stylsheets -->
 <link rel="stylesheet" href="css/style.css">
@@ -42,6 +42,7 @@ $(document).ready(function() {
 		maxWidth: "825px"
 	});
 
+	/////
 	// date pickers
 
 	// initialize input widgets first
@@ -58,6 +59,13 @@ $(document).ready(function() {
 	// initialize datepair
 	var basicExampleEl = document.getElementById('basicExample');
 	var datepair = new Datepair(basicExampleEl);
+
+	////
+	//toggle buttons
+	$(".food-items img").click(
+        function() {
+        	$(this).css("opacity", "1");
+    });
 
 });
 </script>

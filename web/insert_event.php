@@ -43,6 +43,30 @@ WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
 			<span>&nbsp;</span>
 	    	<input type="text" name="end_time" class="time end" placeholder="End time"/>
 	    </label>
+	    <label>
+			<span>Food Image:</span>
+			<ul class="food-items" >
+		    	<li><img src="img/food_icons/popcorn.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/fries.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/apple.png" alt="food"/></li>
+		    </ul>
+		</label>
+		<label>
+			<span>&nbsp;</span>
+			<ul class="food-items" >
+		    	<li><img src="img/food_icons/coffee.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/cookie.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/pizza.png" alt="food"/></li>
+		    </ul>
+		</label>
+		<label>
+			<span>&nbsp;</span>
+			<ul class="food-items" >
+		    	<li><img src="img/food_icons/iceCream.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/muffin.png" alt="food"/></li>
+		    	<li><img src="img/food_icons/misc.png" alt="food"/></li>
+	   		</ul>
+		</label>
 
 	</div>
 
