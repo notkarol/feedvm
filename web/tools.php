@@ -5,7 +5,7 @@ session_start();
 $DB_CONN = connect_to_db();
 if (!is_logged_in())
   {
-    set_session();
+    set_session($DB_CONN);
   }
 
 
@@ -28,7 +28,7 @@ function is_logged_in()
   return isset($_SESSION["NETID"]);
 }
 
-function set_session()
+function set_session($DB_CONN)
 {
   $_SESSION["NETID"] = $_SERVER["WEBAUTH_USER"];
   $_SESSION["POINTS"] = -1;
@@ -43,11 +43,12 @@ function set_session()
       // If the NETID is not in the database, add it
       if ($find_user_result->num_rows == 0)
 	{
-	  add_user();
+	  add_user($DB_CONN);
 	}
       // If the user is in the database, make sure that they are allowed to use app
       else
 	{
+	  echo "UPDATING SESSION";
 	  $row = $find_user_result->fetch_row();
 
 	  $today = date("Y-m-d");
@@ -66,7 +67,7 @@ function set_session()
   
 }
 
-function add_user()
+function add_user($DB_CONN)
 {
   $sql = "INSERT INTO `users` (`netid`, `points`) VALUES (\"" . $_SESSION["NETID"] . "\", 0);";
   if ($insert_user_result = $DB_CONN->query($sql))
@@ -82,7 +83,7 @@ function add_user()
     }
 }
 
-function add_event($name, $food, $location, $map_location, $start_time, $duration)
+function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time, $duration)
 {
   // Block people
   if (!isset($_SESSION["CAN_POST"]) || $_SESSION["CAN_POST"] == 0)
@@ -98,7 +99,7 @@ function add_event($name, $food, $location, $map_location, $start_time, $duratio
   return False;
 }
 
-function get_favorites()
+function get_favorites($DB_CONN)
 {
   if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
     {
@@ -108,7 +109,7 @@ function get_favorites()
   return False;
 }
 
-function get_soon($days)
+function get_soon($DB_CONN, $days)
 {
   if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
     {
