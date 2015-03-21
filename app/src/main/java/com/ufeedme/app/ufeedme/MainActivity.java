@@ -15,7 +15,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         WebView myWebView = (WebView) findViewById(R.id.webView);
-        myWebView.loadUrl("http://www.uvm.edu");
+        myWebView.loadUrl("http://www.uvm.edu/~msibrahi/calc_II/");
     }
 
 
