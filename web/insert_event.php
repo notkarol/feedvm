@@ -3,7 +3,19 @@ include("session.php");
 
 if (isset($_POST['submit']))
   {
-    echo "WE ARE PROCESSING YOUR FORM<br>";
+    if(isset($_POST["submit"])){
+         $name = $_POST["name"];
+         $food = $_POST["food"];
+         $location = $_POST["location"];
+         $start_time = $_POST["start_date"]." ".$_POST["start_time"];
+         $end_time = $_POST["end_date"]." ".$_POST["end_time"];
+         $picture = $_POST["picture"];
+
+         add_event($DBCONN, $name, $food, $location, $location, $start_time, $end_time, $picture);
+}
+
+?>
+
   }
 include("header.php") 
 ?>
