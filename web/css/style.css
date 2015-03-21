@@ -1,9 +1,8 @@
-
 /** MAIN **/
 
 body {
-	font-family: 'Lato', sans-serif;
-	color: #333;
+    font-family: 'Lato', sans-serif;
+    color: #333;
 }
 
 a {
@@ -24,16 +23,15 @@ body a {
     -moz-transition: all .25s ease-in-out;
     -webkit-transition: all .25s ease-in-out;
 }
+
 body a:hover {
     color: #609b46;
 }
 
 .main {
-	padding-top: 60px;
+    padding-top: 60px;
 }
-
 /** HEADER **/
-
 
 header {
     width: 100%;
@@ -46,7 +44,6 @@ header {
     text-align: right;
     border-bottom: 1px solid #f8f8f8;
 }
-
 /** NAV **/
 
 #logo {
@@ -64,7 +61,8 @@ header {
     height: auto;
 }
 
-.shifter-navigation ul, header ul {
+.shifter-navigation ul,
+header ul {
     list-style-type: none;
     color: #88BE70;
     text-transform: lowercase;
@@ -72,20 +70,25 @@ header {
     font-size: 16px;
     letter-spacing: 1px;
 }
+
 header li:not(#logo) {
     vertical-align: -18px;
     padding-left: 40px;
 }
+
 header li:last-child {
     margin-right: 5%;
 }
+
 header nav {
     padding-bottom: 2px;
 }
+
 header ul {
     padding: 0;
     margin: 5px 0;
 }
+
 header ul li {
     display: inline;
 }
@@ -105,84 +108,84 @@ nav a:hover {
 .shifter-navigation ul li {
     margin: 20px 0;
 }
-
 /** EVENTS **/
 
 .event {
-	margin-bottom: 40px;
-  	padding-bottom: 20px;
-  	clear: both;
-  	display: block;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    clear: both;
+    display: block;
+    margin-left: 30px;
 }
 
-.eimage {
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 40px 30px 50px 20px;
-  border-radius: 100px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 300px;
+.event img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+    margin-right: 30px;
 }
 
-.event h2{
-	padding-top: 20px;
-	margin-bottom: 10px;
+.event h2 {
+    padding-top: 20px;
+    margin-bottom: 10px;
 }
 
 .event ul {
-	width: 250px;
-	list-style-type: none;
-	margin-top: 0;
-	padding-left: 0;
-	float: left;
+    width: 250px;
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+    float: left;
 }
 
 .event ul li {
-	padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
-.event button {
-	margin-left: 40px;
-  	margin-top: 5px;
-  	padding: 10px;
-  	width: 50px;
-  	height: 50px;
-  	border-radius: 100px;
-  	background-color: white;
+.event input {
+    margin-left: 40px;
+    margin-top: 5px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: white;
 }
-
-
 /** FORM **/
-
 /* Basic Grey */
+
 .basic-grey {
-	margin-top: 45px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 500px;
     background: #F7F7F7;
     padding: 25px 15px 25px 10px;
     text-shadow: 1px 1px 1px #FFF;
-    border:1px solid #E4E4E4;
+    border: 1px solid #E4E4E4;
 }
+
 .basic-grey h1 {
     font-size: 25px;
     padding: 0px 0px 10px 40px;
     display: block;
-    border-bottom:1px solid #E4E4E4;
-    margin: -10px -15px 30px -10px;;
+    border-bottom: 1px solid #E4E4E4;
+    margin: -10px -15px 30px -10px;
+    ;
     color: #888;
 }
+
 .basic-grey h1>span {
     display: block;
     font-size: 11px;
 }
+
 .basic-grey label {
     display: block;
     margin: 0px;
 }
+
 .basic-grey label>span {
     float: left;
     width: 20%;
@@ -191,7 +194,11 @@ nav a:hover {
     margin-top: 10px;
     color: #888;
 }
-.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+
+.basic-grey input[type="text"],
+.basic-grey input[type="email"],
+.basic-grey textarea,
+.basic-grey select {
     border: 1px solid #DADADA;
     color: #888;
     height: 30px;
@@ -202,19 +209,21 @@ nav a:hover {
     padding: 3px 3px 3px 5px;
     width: 70%;
     font-size: 12px;
-    line-height:15px;
+    line-height: 15px;
     box-shadow: inset 0px 1px 4px #ECECEC;
     -moz-box-shadow: inset 0px 1px 4px #ECECEC;
     -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
 }
-.basic-grey textarea{
+
+.basic-grey textarea {
     padding: 5px 3px 3px 5px;
 }
+
 .basic-grey select {
     background: #FFF url('down-arrow.png') no-repeat right;
     background: #FFF url('down-arrow.png') no-repeat right);
-    appearance:none;
-    -webkit-appearance:none; 
+    appearance: none;
+    -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 0.01px;
     text-overflow: '';
@@ -222,9 +231,11 @@ nav a:hover {
     height: 35px;
     line-height: 25px;
 }
-.basic-grey textarea{
-    height:100px;
+
+.basic-grey textarea {
+    height: 100px;
 }
+
 .basic-grey .button {
     background: #E27575;
     border: none;
@@ -235,13 +246,13 @@ nav a:hover {
     text-shadow: 1px 1px 1px #9E3F3F;
     cursor: pointer;
 }
+
 .basic-grey .button:hover {
     background: #CF7A7A
 }
-
 /** QUERIES **/
 
-@media (max-width: 825px){
+@media (max-width: 825px) {
     header li:not(#logo) {
         display: none;
     }
