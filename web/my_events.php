@@ -21,7 +21,7 @@
         <li>Patrick Gym</li>
       </ul>
     </section>
-    <section class="col-3">
+    <section class="col-3 mine">
       <a href="index.php?title=hi&start_date=3%2F12%2F2015&end_date=4%2F12%2F2015&start_time=3%3A00&end_time=4%3A00&food=hotdogs&location=burlington">★</a>
         <span class="count">7</span>
     </section>

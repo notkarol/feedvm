@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 	// shifter
 	$.shifter({
-		maxWidth: "825px"
+		maxWidth: "960px"
 	});
 
 	/////
@@ -90,6 +90,12 @@ $(document).ready(function() {
 				print '<li>My Events</li>' . "\n";
 			} else {
 				print '<li><a href="my_events.php">My Events</a></li>' . "\n";
+			}
+
+			if(basename($_SERVER['PHP_SELF'])=="submit.php"){
+				print '<li>Submitted Events</li>' . "\n";
+			} else {
+				print '<li><a href="submit.php">Submitted Events</a></li>' . "\n";
 			}
 
 			if(basename($_SERVER['PHP_SELF'])=="map.php"){

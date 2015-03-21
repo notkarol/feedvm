@@ -153,6 +153,12 @@ nav a:hover {
 }
 
 .col-3 a:hover {
+    color: white;
+    border-color:  #C66D0E;
+    background: #FCCA4C;
+}
+
+.mine a{
     color: #C66D0E;
     border-color:  #C66D0E;
     background: #FCCA4C;
@@ -365,7 +371,7 @@ display: block;
 
 /** QUERIES **/
 
-@media (max-width: 825px) {
+@media (max-width: 960px) {
     header li:not(#logo) {
         display: none;
     }
