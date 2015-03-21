@@ -1,5 +1,11 @@
 <?php include("header.php") ?>
 
+<!--iphone app display-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="UFeedMe">
+
   <article class="event">
   	<article style="background-image: url(http://cdn.playbuzz.com/cdn/213b22c3-5a11-48a4-8a1e-08d7331f30a1/a388cc37-d3e8-4f18-8e18-aea55e826ede.jpg);" class="eimage"></article>
 	<h2>Salsa Dancing</h2>
