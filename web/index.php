@@ -1,5 +1,11 @@
 <?php include("header.php") ?>
 
+<!--iphone app display-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="UFeedMe">
+
   <article class="event">
       <img src="img/food_icons/apple.png" alt="food" />
     	<h2>Salsa Dancing</h2>
