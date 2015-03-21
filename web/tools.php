@@ -83,19 +83,24 @@ function add_user($DB_CONN)
     }
 }
 
-function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time, $duration)
+function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time, $end_time, $picture)
 {
   // Block people
   if (!isset($_SESSION["CAN_POST"]) || $_SESSION["CAN_POST"] == 0)
     {
       return False;
     }
-
-  $sql = "INSERT INTO 'events' ('name','food','location','map_location', 'created_on','duration') VALUES (\"$name\", \"$food\", \"$location\", \"$map_location\", \"$start_time\", \"$duration\");";
+  $netid = $_SESSION['NETID'];
+  $sql = "INSERT INTO `events` (`netid`, `name`,`food`,`location`,`map_location`,`start_time`, `end_time`, `picture`, `created_on`) VALUES (\"$netid\", \"$name\", \"$food\", \"$location\", \"$map_location\", \"$start_time\", \"$end_time\", \"$picture\", NOW());";
   if ($insert_event_result = $DB_CONN->query($sql))
     {
+      echo "SUCCESS!";
       return $mysqli->insert_id;
     }
+  else
+  {
+      echo $sql;
+  }
   return False;
 }
 
@@ -118,5 +123,25 @@ function get_soon($DB_CONN, $days)
 
   return False;
 }
+
+function add_user_event($DB_CONN, $event_id, $attended, $rating ){
+    // get net id 
+    $netid = $_SESSION['NETID'];
+
+    $sql = "INSERT INTO `user_events` (`netid`,`event_id`,`attended`,`rating`) VALUES (\"$netid\",\"$event_id\",\"$attended\",\"$rating\")";
+
+    if ($insert_event_result = $DB_CONN->query($sql)) {
+      echo "SUCCESS!";
+      return $mysqli->insert_id;
+    }
+
+    else {
+      echo $sql;
+     }
+      return False;
+
+}
+
+
 
 ?>
