@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
             // Otherwise, the link is not for a page on my site, so launch another Activity that handles URLs
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intent);
-            return true;
+            return false;
         }
 
         private void startActivity(Intent intent) {
