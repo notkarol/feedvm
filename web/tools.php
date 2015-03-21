@@ -142,6 +142,14 @@ function add_user_event($DB_CONN, $event_id, $attended, $rating ){
 
 }
 
+function get_event($DB_CONN, $event_id){ 
+    // get net id 
+    $netid = $_SESSION['NETID'];
+
+    $sql = "SELECT * FROM events WHERE event_id = $event_id";
+    $result = $DB_CONN->query($sql);
+    return $result->fetch_row();
+}
 
 
 ?>
