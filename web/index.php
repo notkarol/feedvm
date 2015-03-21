@@ -8,7 +8,7 @@
 		<li>Tuesday, Nov 1 • 4:00 PM</li>
 		<li>Patrick Gym</li>
 	</ul>
-	<button type="button">★</button>
+	<button type="button" onClick="parent.location='index.php?title=hi&time'" >★</button>
   </article>
 
   <article class="event">
