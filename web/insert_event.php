@@ -10,13 +10,46 @@ include("header.php")
 <body>
 WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
 
-<form method="POST" action="insert_event.php">
-Name: <input type="text" name="name"> <br>
-Food: <input type="text" name="food"> <br>
-Location: <input type="text" name="location"> <br>
-Start Time: <input type="text" name="start_time"> <br>
-Duration: <input type="text" name="duration"> <br>
-<input type="submit" name="submit" value="Feed Us!"><br>
+<form class="basic-grey" method="POST" action="insert_event.php">
+	<h1>Submit an Event</h1>
+
+	<label>
+		<span>Event Name:</span>
+		<input type="text" name="name" placeholder="Event name">
+	</label>
+	<label>
+		<span>Description:</span>
+		<input type="text" name="food" placeholder="Event info and food offered">
+	</label>
+	<label>
+		<span>Location:</span>
+		<input type="text" name="location" placeholder="Location name">
+	</label>
+
+	<div id="basicExample">
+		<label>
+			<span>Date:</span>
+	    	<input name="start_time" type="text" class="date start" placeholder="Start date" />
+		</label>
+		<label>
+			<span>&nbsp;</span>
+		    	<input type="text" class="date end" placeholder="End date" />
+		    </label>
+		<label>
+			<span>Time:</span>
+	    	<input name="duration" type="text" class="time start" placeholder="Start time" />
+	    </label>
+	    <label>
+			<span>&nbsp;</span>
+	    	<input type="text" class="time end" placeholder="End time"/>
+	    </label>
+
+	</div>
+
+	<label>
+		<span>&nbsp;</span>
+		<input class="button" type="submit" name="submit" value="Feed Us!">
+	</label>
 <form>
 
 <?php include("footer.php") ?>
