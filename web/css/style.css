@@ -45,6 +45,7 @@ header {
     overflow: hidden;
     text-align: right;
     border-bottom: 1px solid #f8f8f8;
+    box-shadow: #AAAAAA 0px 0px 8px;
 }
 /** NAV **/
 

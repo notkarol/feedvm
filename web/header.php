@@ -15,7 +15,6 @@
 <!-- Stylsheets -->
 <link rel="stylesheet" href="css/style.css">
 <link href="css/jquery.fs.shifter.css" rel="stylesheet">
-<link rel="stylesheet" href="css/pikaday.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
 
