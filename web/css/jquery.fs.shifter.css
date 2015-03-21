@@ -25,7 +25,7 @@
   min-height: 100%;
   position: relative;
   z-index: 1;
-  background: #ffffff;
+  background: rgb(182, 217, 167);
   display: block;
   overflow: hidden;
 }

@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="UFeedMe">
 
-
+<section class="event-container">
 
   <article class="event">
       <section class="col-1">
@@ -27,6 +27,7 @@
     </section>
   </article>
 
+</section>
 <?php include("footer.php") ?>
 </body>
 </html>
