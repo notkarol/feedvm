@@ -20,6 +20,13 @@
   		</ul>
   		<button type="button">★</button>
   </article>
+  
+<?php 
+$result = get_event($DB_CONN , 15);
+print "<p>";
+print_r($result);
+print "</p>";
+?>
 
 <?php include("footer.php") ?>
 </body>
