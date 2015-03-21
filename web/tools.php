@@ -23,10 +23,12 @@ function connect_to_db()
   return $DB_CONN;
 }
 
+
 function is_logged_in()
 {
   return isset($_SESSION["NETID"]);
 }
+
 
 function set_session($DB_CONN)
 {
@@ -94,23 +96,27 @@ function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time
   $sql = "INSERT INTO `events` (`netid`, `name`,`food`,`location`,`map_location`,`start_time`, `end_time`, `picture`, `created_on`) VALUES (\"$netid\", \"$name\", \"$food\", \"$location\", \"$map_location\", \"$start_time\", \"$end_time\", \"$picture\", NOW());";
   if ($insert_event_result = $DB_CONN->query($sql))
     {
-      echo "SUCCESS!";
       return $mysqli->insert_id;
     }
   else
   {
-      echo $sql;
+      die($sql);
   }
   return False;
 }
 
-function get_favorites($DB_CONN)
+function get_favorites($DB_CONN, $event_id)
 {
   if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
     {
       return False;
     }
 
+  $sql = "SELECT COUNT(`netid`) FROM `user_events` WHERE `event_id`=$event_id" 
+  if ($result = $DB_CONN->query($sql))
+  { 
+    return $result->num_rows;  	
+  }
   return False;
 }
 
@@ -120,6 +126,11 @@ function get_soon($DB_CONN, $days)
     {
       return False;
     }
+  $sql = "SELECT * FROM `events` WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;"
+  if ($result = $DB_CONN->query($sql))
+  { 
+    return $result->fetch_all();
+  }
 
   return False;
 }
@@ -138,10 +149,17 @@ function add_user_event($DB_CONN, $event_id, $attended, $rating ){
     else {
       echo $sql;
      }
-      return False;
+  return False;
 
 }
 
 
+function get_event($DB_CONN, $event_id){
+// get net id
+  $netid = $_SESSION['NETID'];
+  $sql = "SELECT * FROM `events` WHERE `event_id` = $event_id";
+  $result = $DB_CONN->query($sql);
+  return $result->fetch_row();
+}
 
 ?>
