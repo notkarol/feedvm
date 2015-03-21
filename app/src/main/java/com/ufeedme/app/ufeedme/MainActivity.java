@@ -1,11 +1,13 @@
 package com.ufeedme.app.ufeedme;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
-
+import android.webkit.WebViewClient;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -15,9 +17,11 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         WebView myWebView = (WebView) findViewById(R.id.webView);
-        myWebView.loadUrl("http://www.uvm.edu");
-    }
-
+        myWebView.setWebViewClient(new MyWebViewClient());
+        //url string variable
+        String inputUrl = "https://www.uvm.edu/~jroen/ufeedme/web/";
+        myWebView.loadUrl(inputUrl);
+            }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,4 +44,23 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class MyWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (Uri.parse(url).getHost().equals("https://www.uvm.edu/~jroen/ufeedme/web/")) {
+                // This is my web site, so do not override; let my WebView load the page
+                return false;
+            }
+            // Otherwise, the link is not for a page on my site, so launch another Activity that handles URLs
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+            return true;
+        }
+
+        private void startActivity(Intent intent) {
+        }
+    }
 }
+
+
