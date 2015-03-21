@@ -50,7 +50,6 @@ function set_session($DB_CONN)
       // If the user is in the database, make sure that they are allowed to use app
       else
 	{
-	  echo "UPDATING SESSION";
 	  $row = $find_user_result->fetch_row();
 
 	  $today = date("Y-m-d");
@@ -83,6 +82,17 @@ function add_user($DB_CONN)
     {
       die("Unable to add user. Please try again later");
     }
+}
+
+function add_favorite($DB_CONN, $event_id)
+{
+  $netid = $_SESSION['NETID'];
+  $sql = "INSERT INTO `user_events` VALUES (\"$event_id\", \"$netid\", 1, 1);";
+  if ($insert_favorite_result = $DB_CONN->query($sql))
+    {
+    return True;
+    }
+  return False;
 }
 
 function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time, $end_time, $picture)
@@ -119,9 +129,29 @@ function get_favorites($DB_CONN, $event_id)
     }
 */
   $sql = "SELECT COUNT(`netid`) FROM `user_events` WHERE `event_id`=$event_id"; 
+
   if ($result = $DB_CONN->query($sql))
   { 
-    return $result->num_rows;  	
+    $row = $result->fetch_row();
+    return $row[0];
+  }
+  return False;
+}
+
+function is_favorite($DB_CONN, $event_id)
+{
+/*
+  if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
+    {
+      return False;
+    }
+*/
+  $netid = $_SESSION['NETID'];
+  $sql = "SELECT count(*) FROM `user_events` WHERE `event_id`=$event_id and `netid`=\"$netid\""; 
+  if ($result = $DB_CONN->query($sql))
+  { 
+    $row = $result->fetch_row();
+    return $row[0];
   }
   return False;
 }
@@ -134,6 +164,27 @@ function get_soon($DB_CONN, $days)
       return False;
     }*/
   $sql = "SELECT * FROM `events` WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;";
+  if ($result = $DB_CONN->query($sql))
+  {
+    $out = array(); 
+    while ($row = $result->fetch_assoc()) {
+      $out[] = $row;
+    } 
+    return $out;
+  }
+
+  return False;
+}
+
+function get_my($DB_CONN)
+{
+/*
+  if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
+    {
+      return False;
+    }*/
+  $netid = $_SESSION['NETID'];
+  $sql = "SELECT * FROM `events` WHERE `netid`=\"$netid\";";
   if ($result = $DB_CONN->query($sql))
   {
     $out = array(); 

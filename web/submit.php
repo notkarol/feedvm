@@ -17,7 +17,7 @@ if(isset($_GET['id']))
 <section class="event-container">
 
 <?php
-$events = get_soon($DB_CONN, 7);
+$events = get_my($DB_CONN);
 foreach ($events as $event)
 {
   echo ' <article class="event">' . "\n";
@@ -33,7 +33,7 @@ foreach ($events as $event)
   echo '</ul>' . "\n";
   echo '</section>' . "\n";
   echo '<section class="col-3">' . "\n";
-  echo '<a' . (is_favorite($DB_CONN, $event['event_id']) ? ' style="background: yellow;" ' : ' ') . ' href="index.php?id=' . $event['event_id'] . '&title=' . $event['name'] . '&start_time=' . $event['start_time'] . '&end_time=' . $event['end_time'] . '&food=' . $event['food'] . '&location=' . $event['location'] . ' ">★</a>' . "\n";
+  echo '<a' . (is_favorite($DB_CONN, $event['event_id']) ? ' style="background: yellow;" ' : ' ') . ' href="submit.php?id=' . $event['event_id'] . '&title=' . $event['name'] . '&start_time=' . $event['start_time'] . '&end_time=' . $event['end_time'] . '&food=' . $event['food'] . '&location=' . $event['location'] . ' ">★</a>' . "\n";
   echo '<span class="count">' . get_favorites($DB_CONN, $event['event_id']) . '</span>' . "\n";
   echo '</section>' . "\n";
   echo '</article>' . "\n";
