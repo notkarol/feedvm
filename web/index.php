@@ -7,6 +7,7 @@
 <meta name="apple-mobile-web-app-title" content="UFeedMe">
 
 <section class="event-container">
+
   <article class="event">
       <section class="col-1">
         <img src="img/food_icons/apple.png" alt="food" />

@@ -31,33 +31,33 @@ if (isset($error)) echo "<h1 class=\"failure\">$error</h1>";
 
 	<label>
 		<span>Event Name:</span>
-		<input type="text" name="name" placeholder="Event name">
+		<input type="text" name="name" placeholder="Event name" required>
 	</label>
 	<label>
 		<span>Description:</span>
-		<input type="text" name="food" placeholder="Event info and food offered">
+		<input type="text" name="food" placeholder="Event info and food offered" required>
 	</label>
 	<label>
 		<span>Location:</span>
-		<input type="text" name="location" placeholder="Location name">
+		<input type="text" name="location" placeholder="Location name" required>
 	</label>
 
 	<div id="basicExample">
 		<label>
 			<span>Date:</span>
-	    	<input name="start_date" type="text" class="date start" placeholder="Start date" />
+	    	<input name="start_date" type="text" class="date start" placeholder="Start date" required />
 		</label>
 		<label>
 			<span>&nbsp;</span>
-		    	<input type="text" name="end_date" class="date end" placeholder="End date" />
+		    	<input type="text" name="end_date" class="date end" placeholder="End date" required />
 		    </label>
 		<label>
 			<span>Time:</span>
-	    	<input name="start_time" type="text" class="time start" placeholder="Start time" />
+	    	<input name="start_time" type="text" class="time start" placeholder="Start time" required />
 	    </label>
 	    <label>
 			<span>&nbsp;</span>
-	    	<input type="text" name="end_time" class="time end" placeholder="End time"/>
+	    	<input type="text" name="end_time" class="time end" placeholder="End time" required />
 	    </label>
 	    <label>
 			<span>Food Image:</span>

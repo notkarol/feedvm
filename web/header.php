@@ -63,7 +63,7 @@ $(document).ready(function() {
 	//toggle buttons
 	$(".food-items img").click(
         function() {
-        	$(this).css("opacity", "1");
+        	$(this).css({"opacity": "1"});
     });
 
 });
