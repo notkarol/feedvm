@@ -1,29 +1,33 @@
-<?php 
-include("session.php");
+<?php
+require_once("tools.php");
 
 if (isset($_POST['submit']))
   {
-    if(isset($_POST["submit"])){
-         $name = $_POST["name"];
-         $food = $_POST["food"];
-         $location = $_POST["location"];
-         $start_time = $_POST["start_date"]." ".$_POST["start_time"];
-         $end_time = $_POST["end_date"]." ".$_POST["end_time"];
-         $picture = $_POST["picture"];
-
-         add_event($DBCONN, $name, $food, $location, $location, $start_time, $end_time, $picture);
+    $name = $_POST["name"];
+    $food = $_POST["food"];
+    $location = $_POST["location"];
+    $start_time = $_POST["start_date"]." ".$_POST["start_time"];
+    $end_time = $_POST["end_date"]." ".$_POST["end_time"];
+    $picture = $_POST["picture"];
+    $out = add_event($DB_CONN, $name, $food, $location, $location, $start_time, $end_time, $picture);
+    if ($out === False)
+    {
+       $error = "Unable to insert event. Please try again later";
+    }
+    else 
+    {
+       $success = "Submitted event $name (#$out)";
+    }
 }
 
-?>
-
-  }
 include("header.php") 
 ?>
 <body>
-WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
-
 <form class="basic-grey" method="POST" action="insert_event.php">
 	<h1>Submit an Event</h1>
+<?php if (isset($success)) echo "<h1 class=\"success\">$success</h1>";
+if (isset($error)) echo "<h1 class=\"failure\">$error</h1>";
+?>
 
 	<label>
 		<span>Event Name:</span>
@@ -49,7 +53,7 @@ WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
 		    </label>
 		<label>
 			<span>Time:</span>
-	    	<input name="duration" name="start_time" type="text" class="time start" placeholder="Start time" />
+	    	<input name="start_time" type="text" class="time start" placeholder="Start time" />
 	    </label>
 	    <label>
 			<span>&nbsp;</span>
@@ -86,7 +90,7 @@ WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
 		<span>&nbsp;</span>
 		<input class="button" type="submit" name="submit" value="Feed Us!">
 	</label>
-<form>
+</form>
 
 <?php include("footer.php") ?>
 </body>
