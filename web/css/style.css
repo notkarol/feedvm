@@ -232,15 +232,27 @@ nav a:hover {
 .food-items img{
     width: 80px;
     height: auto;
+}
+
+.food-items img:hover {
+      opacity: 1;
+      }
+
+.opacity-light {
     opacity: .3;
        transition: opacity .25s ease-in-out;
        -moz-transition: opacity .25s ease-in-out;
        -webkit-transition: opacity .25s ease-in-out;
 }
 
-.food-items img:hover {
-      opacity: 1;
-      }
+.opacity-full {
+    opacity: 1;
+    border: 1px solid #B6D9A7;
+    border-radius: 100px;
+    transition: border .25s ease-in-out;
+       -moz-transition: border .25s ease-in-out;
+       -webkit-transition: border .25s ease-in-out;
+}
 
 .basic-grey {
     margin-top: 45px;

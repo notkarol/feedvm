@@ -61,10 +61,10 @@ $(document).ready(function() {
 
 	////
 	//toggle buttons
-	$(".food-items img").click(
-        function() {
-        	$(this).css({"opacity": "1"});
-    });
+
+    $( ".food-items img" ).click(function() {
+  		$( this ).toggleClass( "opacity-full" );
+	});
 
 });
 </script>
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 <header>
 
-<nav>
+<nav data-role="navbar">
      <ul>
      	<li id="logo"><a href="index.php"><img src="img/logo/logo_all_color.png" alt="logo" /></a></li>
 		<?php 

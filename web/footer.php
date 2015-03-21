@@ -5,7 +5,7 @@
 </footer>
 
 		</section>
-		<nav class="shifter-navigation">
+		<nav class="shifter-navigation" data-role="navbar">
 			<ul>
 				<?php 
 				
