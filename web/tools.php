@@ -163,7 +163,7 @@ function get_soon($DB_CONN, $days)
     {
       return False;
     }*/
-  $sql = "SELECT * FROM `events` WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;";
+  $sql = "SELECT * FROM `events`"; // WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;";
   if ($result = $DB_CONN->query($sql))
   {
     $out = array(); 
