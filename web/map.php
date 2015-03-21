@@ -2,23 +2,22 @@
   require_once("tools.php");
   
   $events = get_soon($DB_CONN, 7);
-
   $icon_names = array("red-blank.png", "blu-blank.png", "grn-blank.png");
 
   $icon_js = "";
   foreach ($events as $event)
   {
-    $event_id = $event[0];
-    $netid = $event[1];
-    $location = $event[2];
-    $start_time = $event[3];
-    $end_time = $event[4];
-    $name = $event[5];
-    $food = $event[6];
-    $created_on = $event[7];
-    $is_fake = $event[8];
-    $map_location = $event[9];
-    $picture = $event[10];
+    $event_id = $event['event_id'];
+    $netid = $event['netid'];
+    $location = $event['location'];
+    $start_time = $event['start_time'];
+    $end_time = $event['end_time'];
+    $name = $event['name'];
+    $food = $event['food'];
+    $created_on = $event['created_on'];
+    $is_fake = $event['is_fake'];
+    $map_location = $event['map_location'];
+    $picture = $event['picture'];
     $days = 5;
     $icon = $days < 1 ? $icon_names[0] : $days < 3 ? $icon_names[1] : $icon_names[2];
     $icon_js .= "
@@ -28,7 +27,7 @@
           position: results[0].geometry.location,
           map: map,
           title: '$name',
-	  icon: iconBase + '$icon'
+	  icon: iconBase + '$picture'
 	   });
         var infowindow = new google.maps.InfoWindow({ content: '$name ($location $start_time - $end_time): $food'});
         google.maps.event.addListener(marker, 'click', function() {
@@ -71,6 +70,7 @@ function initialize() {
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   var iconBase = 'https://maps.google.com/mapfiles/kml/paddle/';
+  var iconBase = 'img/food_icons/';
 
   <?php echo $icon_js; ?>
 }

@@ -107,12 +107,13 @@ function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time
 
 function get_favorites($DB_CONN, $event_id)
 {
+/*
   if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
     {
       return False;
     }
-
-  $sql = "SELECT COUNT(`netid`) FROM `user_events` WHERE `event_id`=$event_id" 
+*/
+  $sql = "SELECT COUNT(`netid`) FROM `user_events` WHERE `event_id`=$event_id"; 
   if ($result = $DB_CONN->query($sql))
   { 
     return $result->num_rows;  	
@@ -122,14 +123,19 @@ function get_favorites($DB_CONN, $event_id)
 
 function get_soon($DB_CONN, $days)
 {
+/*
   if (!isset($_SESSION["CAN_VIEW"]) || $_SESSION["CAN_VIEW"] == 0)
     {
       return False;
-    }
-  $sql = "SELECT * FROM `events` WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;"
+    }*/
+  $sql = "SELECT * FROM `events` WHERE start_time BETWEEN NOW() AND NOW() + INTERVAL $days DAY;";
   if ($result = $DB_CONN->query($sql))
-  { 
-    return $result->fetch_all();
+  {
+    $out = array(); 
+    while ($row = $result->fetch_assoc()) {
+      $out[] = $row;
+    } 
+    return $out;
   }
 
   return False;
