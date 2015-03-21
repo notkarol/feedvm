@@ -1,4 +1,4 @@
-<!doctype html>
+<?php include("tools.php") ?>
 
 <!doctype html>
 

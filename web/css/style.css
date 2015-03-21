@@ -125,11 +125,34 @@ nav a:hover {
     width: 60px;
     margin: 0;
     float: left;
+    text-align: center;
+    color: #3e7a55;
 }
 
 .col-3 a{
     display: block;
-    margin-top: 70px;
+    margin: 70px auto 10px auto;
+    border: 2px solid;
+    border-radius: 150px;
+    border-color: rgb(89, 171, 121);
+    background: #88BE70;
+    color: #f8f8f8;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    height: 30px;
+    width: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10%;
+    line-height: 30px;
+}
+
+.col-3 a:hover {
+    color: #C66D0E;
+    border-color:  #C66D0E;
+    background: #FCCA4C;
 }
 
 .event {

@@ -29,19 +29,19 @@ WELCOME <?php echo $_SESSION["NETID"]; ?>! <br>
 	<div id="basicExample">
 		<label>
 			<span>Date:</span>
-	    	<input name="start_time" type="text" class="date start" placeholder="Start date" />
+	    	<input name="start_date" type="text" class="date start" placeholder="Start date" />
 		</label>
 		<label>
 			<span>&nbsp;</span>
-		    	<input type="text" class="date end" placeholder="End date" />
+		    	<input type="text" name="end_date" class="date end" placeholder="End date" />
 		    </label>
 		<label>
 			<span>Time:</span>
-	    	<input name="duration" type="text" class="time start" placeholder="Start time" />
+	    	<input name="duration" name="start_time" type="text" class="time start" placeholder="Start time" />
 	    </label>
 	    <label>
 			<span>&nbsp;</span>
-	    	<input type="text" class="time end" placeholder="End time"/>
+	    	<input type="text" name="end_time" class="time end" placeholder="End time"/>
 	    </label>
 
 	</div>
