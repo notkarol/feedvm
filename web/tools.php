@@ -124,4 +124,24 @@ function get_soon($DB_CONN, $days)
   return False;
 }
 
+function add_user_event($DB_CONN, $attended, $rating ){
+    // get net id 
+    $netid = $_SESSION['NETID'];
+
+    $sql = "INSERT INTO `user_events` (`netid`,`attended`,`rating`) VALUES (\"$netid\",\"$attended\",\"$rating\")";
+
+    if ($insert_event_result = $DB_CONN->query($sql)) {
+      echo "SUCCESS!";
+      return $mysqli->insert_id;
+    }
+
+    else {
+      echo $sql;
+     }
+      return False;
+
+}
+
+
+
 ?>
