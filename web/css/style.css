@@ -48,7 +48,7 @@ header {
 
 #logo {
     float: left;
-    padding: 0 5%;
+    padding: 0 35px;
     margin-bottom: 14px;
 }
 
@@ -56,9 +56,8 @@ header {
     float: left;
     padding: 0 5%;
     margin-bottom: 14px;
-    margin-top: -8px;
-    width: 80px;
-    height: auto;
+    height: 70px;
+    width: auto;
 }
 
 .shifter-navigation ul,
@@ -110,6 +109,29 @@ nav a:hover {
 }
 /** EVENTS **/
 
+.col-1{
+    width: 125px;
+    margin: 0;
+    float: left;
+}
+
+.col-2{
+    width: 290px;
+    margin: 0;
+    float: left;
+}
+
+.col-3{
+    width: 60px;
+    margin: 0;
+    float: left;
+}
+
+.col-3 a{
+    display: block;
+    margin-top: 70px;
+}
+
 .event {
     margin-bottom: 40px;
     padding-bottom: 20px;
@@ -145,15 +167,20 @@ nav a:hover {
 
 .event input {
     margin-left: 40px;
-    margin-top: 5px;
+    margin-top: -10px;
     padding: 10px;
     width: 50px;
     height: 50px;
     border-radius: 100px;
     background-color: white;
+    margin-bottom: 7px;
 }
+
+.count {
+    
+}
+
 /** FORM **/
-/* Basic Grey */
 
 .basic-grey {
     margin-top: 45px;
@@ -250,6 +277,18 @@ nav a:hover {
 .basic-grey .button:hover {
     background: #CF7A7A
 }
+
+/** FOOTER **/
+
+footer {
+display: block;
+  clear: both;
+  margin: 40px 40px 20px 0px;
+  float: right;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
 /** QUERIES **/
 
 @media (max-width: 825px) {

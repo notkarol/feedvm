@@ -10,16 +10,16 @@
  <meta name="description" content="UFeedMe: connecting students at UVM through events hosting free food">
  <meta name="author" content="UFeedMe">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 
 <!-- Stylsheets -->
 <link rel="stylesheet" href="css/style.css">
 <link href="css/jquery.fs.shifter.css" rel="stylesheet">
 <link rel="stylesheet" href="css/pikaday.css">
 <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
- <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
 
-<link rel="shortcut icon" href="img/ufm-headerv2-2.png" >
+<link rel="shortcut icon" href="img/logo/favicon.png" >
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
 <!-- Scripts -->
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 <nav>
      <ul>
-     	<li id="logo"><a href="index.php"><img src="img/ufm-headerv2-2.png" alt="logo" /></a></li>
+     	<li id="logo"><a href="index.php"><img src="img/logo/logo_all_color.png" alt="logo" /></a></li>
 		<?php 
 	
 			if(basename($_SERVER['PHP_SELF'])=="index.php"){
