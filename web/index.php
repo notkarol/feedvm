@@ -28,7 +28,7 @@ foreach ($events as $event)
   echo '<h2>' . $event['name'] . '</h2>' . "\n";
   echo '<ul>' . "\n";
   echo '<li>' . $event['food'] . '</li>' . "\n"; 
-  echo '<li>' . $event['start_time'] . '</li>' . "\n"; 
+  echo '<li>' . date("m d y", strtotime($event['start_time'])) . '</li>' . "\n"; 
   echo '<li>' . $event['location'] . '</li>' . "\n"; 
   echo '</ul>' . "\n";
   echo '</section>' . "\n";
