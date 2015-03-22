@@ -17,7 +17,13 @@
     $created_on = $event['created_on'];
     $is_fake = $event['is_fake'];
     $map_location = $event['map_location'];
-    $picture = $event['picture'];
+    if ($event['picture'])
+    {
+      $picture = 'img/food_icons/' . $event['picture'];
+    } else 
+    {
+      $picture  = "https://maps.google.com/mapfiles/kml/paddle/red-blank.png";
+    }
     $days = 5;
     $icon = $days < 1 ? $icon_names[0] : $days < 3 ? $icon_names[1] : $icon_names[2];
     $icon_js .= "
@@ -27,7 +33,7 @@
           position: results[0].geometry.location,
           map: map,
           title: '$name',
-	  icon: iconBase + '$picture'
+	  icon: '$picture'
 	   });
         var infowindow = new google.maps.InfoWindow({ content: '$name ($location $start_time - $end_time): $food'});
         google.maps.event.addListener(marker, 'click', function() {

@@ -47,11 +47,11 @@ $(document).ready(function() {
 	// initialize input widgets first
 	$('#basicExample .time').timepicker({
 	    'showDuration': true,
-	    'timeFormat': 'g:ia'
+	    'timeFormat': 'H:i:s'
 	});
 
 	$('#basicExample .date').datepicker({
-	    'format': 'm/d/yyyy',
+	    'format': 'yyyy-mm-dd',
 	    'autoclose': true
 	});
 
@@ -62,7 +62,8 @@ $(document).ready(function() {
 	////
 	//toggle buttons
 
-    $( ".food-items img" ).click(function() {
+        $( ".food-items img" ).click(function() {       
+                document.getElementById("picture").value = $(this).attr('src').split('/').reverse()[0];
   		$( this ).toggleClass( "opacity-full" );
 	});
 
@@ -86,10 +87,10 @@ $(document).ready(function() {
 				print '<li><a href="index.php">Home</a></li>' . "\n";
 			} 
 
-			if(basename($_SERVER['PHP_SELF'])=="my_events.php"){
+			if(basename($_SERVER['PHP_SELF'])=="submit.php"){
 				print '<li>My Events</li>' . "\n";
 			} else {
-				print '<li><a href="my_events.php">My Events</a></li>' . "\n";
+				print '<li><a href="submit.php">My Events</a></li>' . "\n";
 			}
 
 			if(basename($_SERVER['PHP_SELF'])=="submit.php"){

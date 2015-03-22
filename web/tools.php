@@ -106,6 +106,7 @@ function add_event($DB_CONN, $name, $food, $location, $map_location, $start_time
   */
   $netid = $_SESSION['NETID'];
   $sql = "INSERT INTO `events` (`netid`, `name`,`food`,`location`,`map_location`,`start_time`, `end_time`, `picture`, `created_on`) VALUES (\"$netid\", \"$name\", \"$food\", \"$location\", \"$map_location\", \"$start_time\", \"$end_time\", \"$picture\", NOW());";
+  echo $sql;
   if ($insert_event_result = $DB_CONN->query($sql))
     {
       $sql = "SELECT MAX(`event_id`) FROM `events`;";
