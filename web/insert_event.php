@@ -62,25 +62,25 @@ if (isset($error)) echo "<h1 class=\"failure\">$error</h1>";
 	    <label>
 			<span>Food Image:</span>
 			<ul class="food-items" >
-		    	<li><img src="img/food_icons/popcorn.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/fries.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/apple.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/popcorn.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/fries.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/apple.png" alt="food"/></li>
 		    </ul>
 		</label>
 		<label>
 			<span>&nbsp;</span>
 			<ul class="food-items" >
-		    	<li><img src="img/food_icons/coffee.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/cookie.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/pizza.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/coffee.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/cookie.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/pizza.png" alt="food"/></li>
 		    </ul>
 		</label>
 		<label>
 			<span>&nbsp;</span>
 			<ul class="food-items" >
-		    	<li><img src="img/food_icons/iceCream.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/muffin.png" alt="food"/></li>
-		    	<li><img src="img/food_icons/misc.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/iceCream.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/muffin.png" alt="food"/></li>
+		    	<li><img class="food-item"src="img/food_icons/misc.png" alt="food"/></li>
 	   		</ul>
 		</label>
 
