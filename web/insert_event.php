@@ -6,8 +6,8 @@ if (isset($_POST['submit']))
     $name = $_POST["name"];
     $food = $_POST["food"];
     $location = $_POST["location"];
-    $start_time = $_POST["start_date"]." ".$_POST["start_time"];
-    $end_time = $_POST["end_date"]." ".$_POST["end_time"];
+    $start_time = $_POST["start_date"] . " " . $_POST["start_time"];
+    $end_time = $_POST["end_date"] . " " . $_POST["end_time"];
     $picture = $_POST["picture"];
     $out = add_event($DB_CONN, $name, $food, $location, $location, $start_time, $end_time, $picture);
     if ($out === False)
@@ -85,7 +85,7 @@ if (isset($error)) echo "<h1 class=\"failure\">$error</h1>";
 		</label>
 
 	</div>
-
+        <input type="hidden" name="picture" id="picture" value="">
 	<label>
 		<span>&nbsp;</span>
 		<input class="button" type="submit" name="submit" value="Feed Us!">
