@@ -10,11 +10,8 @@ if (!is_logged_in())
 
 
 function connect_to_db()
-{
-  $user = "kzieba_writer";
-  $pass = "UFEEDME";
-  $host = "webdb.uvm.edu";
-  $db   = "KZIEBA_UFEEDME";
+{ 
+  include("db.php");
   $DB_CONN = new mysqli($host, $user, $pass, $db);
   if ($DB_CONN->connect_error)
     {
